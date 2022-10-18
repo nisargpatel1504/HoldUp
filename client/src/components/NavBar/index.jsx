@@ -20,9 +20,8 @@ const drawerWidth = 240;
 function NavBar(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-
     const checkConnection = () =>{
-        return props.isConnected ? "Connected" : "Connect"
+        return props.isConnected() ? "Connected" : (<div onClick={()=>props.connect()}>Connect</div>)
     }
     const navItems = ['Markets', 'Assets', checkConnection()];
   
@@ -51,7 +50,7 @@ function NavBar(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
   return (
     <Box sx={{ display: 'flex' }}>
-    <AppBar component="nav">
+    <AppBar component="nav" style={{backgroundColor:'#252626'}}>
       <Toolbar>
         <IconButton
           color="inherit"
@@ -69,7 +68,7 @@ function NavBar(props) {
         >
           HoldUp
         </Typography>
-        <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+        <Box sx={{ display: { xs: 'none', sm: 'block' ,color:'#FAFCFF'} }}>
           {navItems.map((item) => (
             <Button key={item} sx={{ color: '#fff' }}>
               {item}
@@ -90,14 +89,14 @@ function NavBar(props) {
         sx={{
           display: { xs: 'block', sm: 'none' },
           '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+          backgroundColor:'#0a0d79',
         }}
       >
         {drawer}
       </Drawer>
     </Box>
-    <Box component="main" sx={{ p: 3 }}>
+    <Box component="main">
       <Toolbar />
-      <Body/>
     </Box>
   </Box>
 );

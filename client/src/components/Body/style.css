@@ -1,0 +1,44 @@
+.main{
+    background-color: #FAFCFF;
+    height: 200px;
+    position: relative;
+    width: 650px;
+    left:450px;
+    margin-top:5%;
+    border-radius: 20px;
+}
+.main-head{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
+    display: flex;
+    align-items:center;
+}
+
+.main-header{
+    color:#252626;
+    text-align:center;
+    display:flex;
+    align-items:center;
+    font-size: 2rem !important;
+    font-weight: bold;
+}
+
+.main-item{
+    background-color:  transparent!important;
+    color: #252626 !important;
+    margin:2px;
+    height: 45px;
+    text-align: start !important;
+    display: flex;
+    border-radius: 0% !important;
+    box-shadow: none !important;
+}
+.main-itemDetails{
+    display: flex;
+    flex-direction: column;
+}
+.main-dollarIcon:hover{
+    color: #FAFCFF;
+    background-color: #252626;
+}

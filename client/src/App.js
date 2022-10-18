@@ -1,9 +1,11 @@
-import react,{useEffect,useState} from 'react';
+import React,{useEffect,useState } from 'react';
 import {ethers} from 'ethers';
 import artifact from './artifacts/contracts/Staking.sol/Staking.json';
 import './App.css';
 import NavBar from './components/NavBar'
+import Body from './components/Body';
 const CONTRACT_ADDRESS = '0x8bf5eFAc0C78364A1a8626Bd303c3F695Df010C9'
+
 
 function App() {
   //genereal
@@ -107,7 +109,15 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar isConnected={isConnected} connect={connectAndLoad}  signer={signer} signerAddress={signerAddress}/>
+      <NavBar 
+      isConnected={isConnected}
+      connect={connectAndLoad} 
+      signer={signer} 
+      signerAddress={signerAddress} 
+      style={{ backgroundColor:'#0a0d79'}}/>
+      <div>
+      <Body oepnStakingModal={oepnStakingModal}/>
+      </div>
     </div>
   );
 }
