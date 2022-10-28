@@ -42,6 +42,7 @@ contract Staking{
         positionIdsByAddress[msg.sender].push(currentPositionId);
         currentPositionId +=1;
     }
+
     function calculateInterest(uint basisPoints, uint weiAmount) private pure returns(uint){
         return basisPoints * weiAmount / 10000 ;
     }
@@ -55,15 +56,19 @@ contract Staking{
     function getLockPeriods() external view returns(uint[] memory){
         return lockPeriods; 
     }
+
     function getInterestRate(uint numDays) external view returns(uint){
         return tiers[numDays];
     }
+
     function getPositionById(uint positionId) external view returns(Position memory){
         return positions[positionId];
     }
+
     function getPositionIdsForAddress( address walletAddress)external view returns(uint[] memory){
         return positionIdsByAddress[walletAddress];
     }
+    
     function changeUnlockDate(uint positionId, uint newUnlockDate) external {
         require(owner == msg.sender,'only owner may modify unlock date');
         positions[positionId].unlockDate = newUnlockDate;

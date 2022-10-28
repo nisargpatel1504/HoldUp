@@ -7,7 +7,7 @@ import { experimentalStyled as styled } from '@mui/material/styles';
 import { Typography } from '@mui/material';
 import { FaEthereum } from 'react-icons/fa';
 import {RiMoneyDollarBoxLine} from 'react-icons/ri';
-import StakedAssets from '../StakedAssets';
+
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
@@ -16,7 +16,8 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-function Body({oepnStakingModal}) {
+function Body(props) {
+  const {oepnStakingModal} = props;
   const data =[
     {
       month: 1,
@@ -57,8 +58,7 @@ function Body({oepnStakingModal}) {
       </Grid>
     </Box>
     </div>
-    <StakedAssets/>
-    </>
+  </>
   )
 }
 

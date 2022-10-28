@@ -1,0 +1,13 @@
+.modal-heading{
+    display: grid;
+    padding-bottom: 25px;
+    justify-content: center;
+  }
+.modal-headerText{
+    color:#252626;
+    text-align:center;
+    display:flex;
+    align-items:center;
+    font-size: 2rem !important;
+    font-weight: bold;
+}

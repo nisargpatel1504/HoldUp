@@ -1,0 +1,30 @@
+.main{
+    /* background-color: #FAFCFF; */
+    height: auto;
+    position: relative;
+    width: 650px;
+    left:450px;
+    margin-top:5%;
+    border-radius: 20px;
+}
+.stake-container{
+    border-radius: 12px !important;
+    background-color: transparent!important;
+}
+.stake-head{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+}
+.stake-headingText{
+    color:#252626;
+    text-align:center;
+    display:flex;
+    align-items:center;
+    font-size: 2rem !important;
+    font-weight: bold;
+    margin-left: 200px !important;
+    width: 100%;
+}

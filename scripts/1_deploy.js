@@ -1,9 +1,12 @@
+// import { ethers  } from "hardhat";
     async function main(){
-        [signer1,signer2] = await ethers.getSigners();
+       
+        const [signer1,signer2] = await ethers.getSigners();
         const Staking = await ethers.getContractFactory('Staking',signer1);
 
         //deploying contract
-        staking = await Staking.deploy({value: ethers.utils.parseEther('10')});
+        const staking = await Staking.deploy();
+
         console.log('Staking contract deployed to :',staking.address , 'by',signer1.address)
 
         const provider  = waffle.provider;

@@ -4,6 +4,7 @@ describe('Staking',function(){
         [signer1,signer2] = await ethers.getSigners();
         Staking = await ethers.getContractFactory('Staking',signer1);
         staking= await Staking.deploy({value:ethers.utils.parseEther('10')});
+       
     });
 
     describe('deploy',function(){
@@ -151,7 +152,7 @@ describe('Staking',function(){
             transaction = await staking.connect(signer1).stakeEther(90,data)
 
             const positionIds = await staking.getPositionIdsForAddress(signer1.address);
-
+            console.log(positionIds);
             expect(positionIds.map(P => Number(P))).to.eql([0,1])
 
         })

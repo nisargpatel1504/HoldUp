@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect,useCallback} from 'react'
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -14,17 +14,18 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import './style.css';
-import Body from '../Body'
 const drawerWidth = 240;
 
 function NavBar(props) {
-    const { window } = props;
+    const { window, isConnected,connect } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const checkConnection = () =>{
-        return props.isConnected() ? "Connected" : (<div onClick={()=>props.connect()}>Connect</div>)
-    }
+    const checkConnection = useCallback(() => {
+        return isConnected() ? "Connected" : (<div onClick={()=> connect()}>Connect</div>)
+    })
     const navItems = ['Markets', 'Assets', checkConnection()];
-  
+  useEffect(()=>{
+    checkConnection();
+  },[checkConnection])
     const handleDrawerToggle = () => {
       setMobileOpen(!mobileOpen);
     };
