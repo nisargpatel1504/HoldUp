@@ -69,7 +69,7 @@ function NavBar(props) {
         >
           HoldUp
         </Typography>
-        <Box sx={{ display: { xs: 'none', sm: 'block' ,color:'#FAFCFF'} }}>
+        <Box sx={{ display: { xs: 'none', sm: 'block' ,color:'black'} }}>
           {navItems.map((item) => (
             <Button key={item} sx={{ color: '#fff' }}>
               {item}

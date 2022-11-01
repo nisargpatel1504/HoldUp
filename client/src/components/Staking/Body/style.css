@@ -3,7 +3,6 @@
     height: auto;
     position: relative;
     width: 650px;
-    left:450px;
     margin-top:5%;
     border-radius: 20px;
     padding: 2px;
@@ -15,7 +14,9 @@
     display: flex;
     align-items:center;
 }
-
+.main-box{
+    height: 120px;
+}
 .main-header{
     color:#252626;
     text-align:center;

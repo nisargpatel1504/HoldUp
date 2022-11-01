@@ -1,4 +1,4 @@
-import React ,{useContext} from 'react'
+import React from 'react'
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -42,7 +42,7 @@ function Body(props) {
       <FaEthereum  className='main-etherLogo' size={30}/>
       <Typography className='main-header'>Ethereum Market</Typography>
       </div>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1 }} className='main-box'>
       <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} className='main-grid'>
         {data.map((item, index) => (
           <Grid item xs={3} sm={4} md={4} key={index}>

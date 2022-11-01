@@ -11,3 +11,9 @@
     font-size: 2rem !important;
     font-weight: bold;
 }
+.btn-stakeEther{
+    width: 100%;
+    background-color: rgba(25, 118, 210, 0.04);
+    color: white;
+    border-radius: 9px;
+}

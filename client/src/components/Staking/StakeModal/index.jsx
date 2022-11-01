@@ -16,7 +16,7 @@ const StakeModal = forwardRef((props,ref) => {
         bgcolor: 'background.paper',
         border: '2px solid #000',
         boxShadow: 24,
-        borderRadius: '10px',
+        borderRadius: '12px',
         p: 4,
       };
     return(
@@ -78,7 +78,7 @@ const StakeModal = forwardRef((props,ref) => {
             </Paper>
           </Grid>
           <Grid item xs={12}>
-            <Button onClick={()=>stakeEther()}>Stake</Button>
+            <Button className='btn-stakeEther' onClick={()=>stakeEther()}>Stake</Button>
           </Grid>
 
         </Grid>
